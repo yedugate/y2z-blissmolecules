@@ -49,15 +49,30 @@
             margin: auto;
         }
         
-        /* --- Navigation Styles --- */
+        /* --- START: UPDATED NAVIGATION STYLES --- */
+
+        /* Button Entrance Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         nav {
-            background-color: var(--primary-color);
-            padding: 10px 0;
+            /* Removed background to let buttons stand out */
+            padding: 15px 0; /* Increased padding for better spacing */
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #ffffff; /* Added a light background for the bar */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
+        
         nav ul {
             list-style: none;
             margin: 0;
@@ -65,30 +80,49 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Allow wrapping on all screen sizes */
+            flex-wrap: wrap;
         }
+        
+        /* Animation applied to the list item */
         nav ul li {
-            margin: 5px 15px;
+            margin: 5px 10px;
+            opacity: 0; /* Start hidden for animation */
+            animation: fadeInUp 0.5s ease forwards;
         }
+
+        /* Staggered animation delay for each button */
+        nav ul li:nth-child(1) { animation-delay: 0.2s; }
+        nav ul li:nth-child(2) { animation-delay: 0.4s; }
+        nav ul li:nth-child(3) { animation-delay: 0.6s; }
+        
+        /* Modern Button Styling */
         nav ul li a {
+            display: inline-block;
+            background: var(--secondary-color);
             color: white;
             text-decoration: none;
-            font-family: var(--font-tamil); /* Changed to Tamil font for consistency */
-            font-weight: 500; /* Adjusted weight */
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            white-space: nowrap; /* Prevent text from breaking mid-word */
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 50px; /* Pill-shaped buttons */
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 0.95em;
         }
-        /* Using English font for the first link specifically */
+        
         nav ul li a.font-english {
             font-family: var(--font-english);
-            font-weight: 600;
         }
+        
         nav ul li a:hover,
         nav ul li a.active {
-            background-color: var(--secondary-color);
+            background: var(--accent-color);
+            transform: translateY(-3px); /* Lifts the button on hover */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
+
+        /* --- END: UPDATED NAVIGATION STYLES --- */
+
 
         /* --- Carousel Styles --- */
         .carousel-wrapper {
@@ -208,13 +242,9 @@
         @media (max-width: 768px) {
             header h1 { font-size: 2em; }
             
-            nav ul li {
-                margin: 5px 8px; /* Slightly reduce margin */
-            }
             nav ul li a {
-                padding: 8px 10px; /* Slightly reduce padding */
-                font-size: 0.9em;
-                text-align: center;
+                padding: 10px 18px;
+                font-size: 0.85em;
             }
 
             .slide-content h2 { font-size: 1.8em; }
@@ -235,9 +265,9 @@
 
     <nav>
         <ul>
-            <li><a href="page1.html" class="font-english">Page 1: Habitual Intelligence Loop</a></li> 
-            <li><a href="page2.html">Page 2: நமது உடலின் நண்பர்களும் எதிரிகளும்</a></li>
-            <li><a href="page3.html">Page 3: Y-Diet வழிகாட்டி</a></li>
+            <li><a href="page1.html" class="font-english">Habitual Intelligence Loop</a></li> 
+            <li><a href="page2.html">நமது உடலின் நண்பர்களும் எதிரிகளும்</a></li>
+            <li><a href="page3.html">Y-Diet வழிகாட்டி</a></li>
         </ul>
     </nav>
     <div class="container">
