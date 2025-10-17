@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ta">
+<style>
+/* --- Attractive Back to Home Button CSS --- */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(44, 62, 80, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(44, 62, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(44, 62, 80, 0);
+  }
+}
+
+.home-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  /* Using your site's color variables for a perfect match */
+  background: linear-gradient(145deg, var(--secondary-color, #3498db), var(--primary-color, #2c3e50));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  z-index: 1001; /* Ensure it's above other content */
+  transition: all 0.3s ease-in-out;
+  animation: pulse 2s infinite;
+}
+
+.home-button svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.home-button:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+  /* Using your site's color variables for the hover effect */
+  background: linear-gradient(145deg, var(--accent-color, #27ae60), var(--secondary-color, #3498db));
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+.home-button:hover svg {
+  transform: scale(1.05);
+}
+</style>
+
+<a href="index.html" class="home-button" aria-label="Back to Home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
+    </svg>
+</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y-Diet வழிகாட்டி: ஸ்மார்ட் ஸ்வாப் → ஆனந்த மூலக்கூறுகள்</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --theme-pink: #ff6b81;
+            --theme-blue: #4a90e2;
+            --theme-green: #50e3c2;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+            --bg-light: #f9faff;
+            --card-bg: #ffffff;
+            --font-tamil: 'Noto Sans Tamil', sans-serif;
+            --font-english: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-tamil);
+            line-height: 1.9;
+            color: var(--text-dark);
+            background: linear-gradient(180deg, #fdfcff 0%, #f5f7fa 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 15px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin: 0 0 5px 0;
+            font-family: var(--font-english);
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.1em;
+            color: var(--text-light);
+        }
+        header .logo-placeholder {
+            background: linear-gradient(45deg, var(--theme-pink), #ff8a9a);
+            color: white;
+            font-family: var(--font-english);
+            font-weight: 700;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 25px auto;
+            font-size: 1.8em;
+            box-shadow: 0 8px 25px rgba(255, 107, 129, 0.4);
+        }
+
+        .carousel-banners {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .banner {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.07);
+            border-bottom: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .banner:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(44, 62, 80, 0.1);
+        }
+        .banner-1 { border-color: var(--theme-pink); }
+        .banner-2 { border-color: var(--theme-blue); }
+        .banner-3 { border-color: var(--theme-green); }
+        .banner h2 { 
+            font-size: 1.3em; 
+            margin-top: 0; 
+            font-family: var(--font-english);
+            font-weight: 600;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.07);
+        }
+        .card > h2 {
+            font-size: 1.8em;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--theme-pink);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .table-wrapper { overflow-x: auto; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #eef2f7;
+            vertical-align: middle;
+        }
+        thead {
+            background: var(--theme-pink);
+            color: white;
+            font-family: var(--font-english);
+            font-weight: 600;
+        }
+        tbody tr:nth-child(even) { background-color: #fcfdff; }
+        tbody tr:hover { background-color: #f7f9fc; }
+        
+        td b, td strong {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .note {
+            background-color: #eef2f7; 
+            border-left: 4px solid var(--theme-blue);
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        
+        /* --- Styles for Swap Arrows --- */
+        .swap-arrow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            opacity: 0.7;
+        }
+        .arrow.up {
+            border-bottom: 10px solid var(--theme-pink);
+            animation: bounce-up 2s infinite ease-in-out;
+        }
+        .arrow.down {
+            border-top: 10px solid var(--theme-green);
+            margin-top: 8px;
+            animation: bounce-down 2s infinite ease-in-out;
+        }
+        @keyframes bounce-up {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes bounce-down {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+        /* --- End of Arrow Styles --- */
+
+        footer .safety-note {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        footer h3 {
+            margin-top: 0;
+            color: #d97706;
+        }
+
+        /* --- MOBILE RESPONSIVE STYLES --- */
+        @media (max-width: 768px) {
+            body { line-height: 1.8; }
+            .container { padding: 10px; }
+            header { padding: 20px 10px; }
+            header h1 { font-size: 2em; }
+            header p { font-size: 1em; }
+            header .logo-placeholder { width: 80px; height: 80px; font-size: 1.5em; margin-bottom: 20px; }
+            
+            .card { padding: 20px; }
+            .card > h2 { font-size: 1.5em; }
+
+            th, td { padding: 12px 10px; font-size: 0.95em; }
+            
+            .banner { padding: 20px; }
+            .banner h2 { font-size: 1.2em; }
+
+            .swap-column {
+                display: none; /* Hide arrow column on mobile */
+            }
+            
+            footer { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo-placeholder">Y-Diet</div>
+        <h1>Y-Diet வழிகாட்டி</h1>
+        <p>ஸ்மார்ட் ஸ்வாப் → ஆனந்த மூலக்கூறுகள் (Bliss Molecules)</p>
+    </header>
+
+    <div class="carousel-banners">
+        <div class="banner banner-1">
+            <h2>✨ ஆனந்த மூலக்கூறுகள்</h2>
+            <p>நம் உணவும் பழக்கங்களும் எப்படி நம் உடலின் “Bliss Tone”-ஐ இயற்கையாக ஊக்குவிக்கின்றன என்பதை அறியுங்கள்.</p>
+        </div>
+        <div class="banner banner-2">
+            <h2>🔄 ஸ்மார்ட் ஸ்வாப்</h2>
+            <p>சிறு உணவு மாற்றங்கள் மூலம், அதிக வெப்ப சமையலால் வரும் பாதிப்புகளைத் தவிர்த்து, ஆரோக்கியத்தை மேம்படுத்துங்கள்.</p>
+        </div>
+        <div class="banner banner-3">
+            <h2>🧒 குழந்தைகளுக்கான வழிகள்</h2>
+            <p>எளிய, வேடிக்கையான 5 வெற்றி வழிகள் மூலம் குழந்தைகளிடம் ஆரோக்கியமான பழக்கங்களை உருவாக்குங்கள்.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="card">
+            <h2>1) 🧬 Bliss Molecules — என்ன? எப்படி ஊக்குவிப்பது?</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bliss Molecule (EN)</th>
+                            <th>பணி (சுருக்கம்)</th>
+                            <th>இயற்கை ஊக்கிகள் (ஸ்மார்ட் ஸ்வாப் உணவுகள்)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Anandamide (AEA)</b></td><td>😌 “Bliss/Calm tone”; மனஅமைதி</td><td>Cold press vegetable oils(Eg: எள்ளு/தேங்காய்), வால்நட் & ஆளிவிதை (Ω-3), 70%+ டார்க் கோகோ</td></tr>
+                        <tr><td><b>2-AG</b></td><td>⚖️ ECS சமநிலை; stress குறைப்பு</td><td>வால்நட், ஆளி/சியா, கடலை/பருப்பு + நல்லெண்ணெய்</td></tr>
+                        <tr><td><b>Serotonin</b></td><td>😊 மனநிலை/தூக்கம்/நிறைவு</td><td>பச்சை பயறு, கடலை, எள்ளு; நெல்லிக்காய்/வாழை; தயிர்/நொதித்த உணவுகள்</td></tr>
+                        <tr><td><b>Dopamine</b></td><td>🏆 உற்சாகம்/கவனம்</td><td>பேரிச்சை+நட்ஸ் லட்டு, மொரிங்கா; சிவப்பு அரிசி/சிறுதானியங்கள்</td></tr>
+                        <tr><td><b>Oxytocin</b></td><td>❤️ நெருக்கம்/பிணைப்பு</td><td>சமூகமாக உணவு; மிதசூடான “பாதாம் / Golden Milk” பால்</td></tr>
+                        <tr><td><b>Endorphins</b></td><td>🏃‍♂️ வலி-நிவாரணி / “runner’s high”</td><td>மிளகு/இஞ்சி (மிதமாக), உடற்பயிற்சி, சிரிப்பு</td></tr>
+                        <tr><td><b>GABA</b></td><td>🧘 அமைதி/பதட்டம் குறைவு</td><td>நொதித்த உணவுகள் (இட்லி/தோசை மாவு), பச்சை தேநீர், பூசணி</td></tr>
+                        <tr><td><b>BDNF</b></td><td>🧠 மூளைப் plasticity</td><td>உடற்பயிற்சி, Ω-3, மஞ்சள் (குர்குமின்), கோகோ</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="note">
+                <b>💡 குறிப்பு:</b> “Bliss” என்பது பல நரம்புக்கூறுகளின் சமநிலை. பதப்படுத்தப்பட்ட/அதிக வெப்ப-வறுத்தல் உணவுகள் இதை சிதைக்கலாம்; முழு-உணவு, நொதித்தல், நேரத்திற்கு உணவு (Chrono) இதை மேம்படுத்தும்.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>2) 🥗 ஸ்மார்ட் ஸ்வாப் → Bliss tone உயர்வு</h2>
+            <div class="table-wrapper">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th>தற்போதைய தேர்வு</th>
+                            <th class="swap-column" style="text-align: center;">↔️</th>
+                            <th>ஸ்மார்ட் ஸ்வாப்</th>
+                            <th>ஏன் bliss-friendly?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🍟 Potato chips (டீப்-ஃப்ரை)</td>
+                            <td class="swap-column">
+                                <div class="swap-arrow-container">
+                                    <div class="arrow up"></div>
+                                    <div class="arrow down"></div>
+                                </div>
+                            </td>
+                            <td><b>🌰 சுட்ட உருளை + நிலக்கடலை/சுண்டல்</b></td>
+                            <td>Acrylamide ↓; நார்ச்சத்து ↑; நல்லெண்ணெய் → ECS tone</td>
+                        </tr>
+                        <tr>
+                            <td>🍫 Milk-choc candy</td>
+                            <td class="swap-column">
+                                <div class="swap-arrow-container">
+                                    <div class="arrow up"></div>
+                                    <div class="arrow down"></div>
+                                </div>
+                            </td>
+                            <td><b>🖤 70%+ கோகோ சாக்லேட் (Minimally processed: No additives) அல்லது பேரிச்சை+நட்ஸ் “லட்டு”</b></td>
+                            <td>Polyphenols + மெல்லிய இனிப்பு</td>
+                        </tr>
+                        <tr>
+                            <td>🍞 White bread toast</td>
+                            <td class="swap-column">
+                                <div class="swap-arrow-container">
+                                    <div class="arrow up"></div>
+                                    <div class="arrow down"></div>
+                                </div>
+                            </td>
+                            <td><b>🍚 கைக்குத்தல் சிவப்பு அரிசி இட்லி/தோசை</b></td>
+                            <td>நொதித்தல் = GABA/Serotonin ஆதரவு</td>
+                        </tr>
+                        <tr>
+                            <td>🥤 Cola/energy drink</td>
+                            <td class="swap-column">
+                                <div class="swap-arrow-container">
+                                    <div class="arrow up"></div>
+                                    <div class="arrow down"></div>
+                                </div>
+                            </td>
+                            <td><b>🍋 எலுமிச்சை-புதினா நீர் அல்லது நெல்லிக்காய் பானம்</b></td>
+                            <td>செயற்கை நிறமிகள்/சர்க்கரை → 0; Vitamin-C ↑</td>
+                        </tr>
+                        <tr>
+                            <td>🥟 Evening samosa/bajji</td>
+                            <td class="swap-column">
+                                <div class="swap-arrow-container">
+                                    <div class="arrow up"></div>
+                                    <div class="arrow down"></div>
+                                </div>
+                            </td>
+                            <td><b>🥗 ஸ்டீம் இட்லி + சுண்டல்/முளைகட்டிய சாலட்</b></td>
+                            <td>Trans/பழைய எண்ணெய் ↓; Protein-fiber ↑</td>
+                        </tr>
+                        <tr>
+                            <td>🍝 Late heavy dinner</td>
+                             <td class="swap-column">
+                                <div class="swap-arrow-container">
+                                    <div class="arrow up"></div>
+                                    <div class="arrow down"></div>
+                                </div>
+                            </td>
+                            <td><b>🥣 Early (≤7 pm) light dinner – மில்லெட் உப்புமா</b></td>
+                            <td>தூக்கம் → serotonin/melatonin சீராகும்</td>
+                        </tr>
+                        <tr>
+                            <td>🍜 Instant noodles</td>
+                             <td class="swap-column">
+                                <div class="swap-arrow-container">
+                                    <div class="arrow up"></div>
+                                    <div class="arrow down"></div>
+                                </div>
+                            </td>
+                            <td><b>🌿 மொரிங்கா-சேமியா + எள்ளெண்ணெய்</b></td>
+                            <td>B-vit/மைக்ரோநியூட்ரியன்ட் ↑; நல்லெண்ணெய்</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2>3) 🔥 “Stress molecules” — எதைத் தவிர்க்கலாம்?</h2>
+            <div class="table-wrapper">
+                <table>
+                     <thead>
+                        <tr>
+                            <th>Problem molecule</th>
+                            <th>எங்கே உருவாகும்</th>
+                            <th>Why it’s a problem</th>
+                            <th>Easy Swap / Tweak</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Acrylamide</b></td><td>வறுத்த உருளை/சிப்ஸ், உயர்-வெப்ப தானியங்கள்</td><td>நரம்பு/சிறுநீரக-ரிஸ்க்</td><td>✅ பேக்/ஏர்-ஃப்ரை; வேகவைத்த உருளை</td></tr>
+                        <tr><td><b>AGEs</b></td><td>உலர்-வெப்ப ரோஸ்ட்/கிரில்</td><td>மெட்டபாலிக் அழற்சி ↑</td><td>✅ ஈர வெப்ப முறை (அவியல்/குழம்பு)</td></tr>
+                        <tr><td><b>HCAs/PAHs</b></td><td>கரிந்த கிரில்/புகை</td><td>DNA-stress ↑</td><td>✅ கருகாமல் சமை; வேகவைத்து பின் வறு</td></tr>
+                        <tr><td><b>Acrolein</b></td><td>மீண்டும்-மீண்டும் எண்ணெய் சூடாக்கல்</td><td>சுவாச/உடல் பாதிப்பு</td><td>✅ எண்ணெய் ரீயூஸ் வேண்டாம்; குறைந்த வெப்பம்</td></tr>
+                        <tr><td><b>Trans fats</b></td><td>ஹைட்ரஜனேஷன்/பழைய எண்ணெய்</td><td>LDL↑, இன்சுலின் ரெசிஸ்டென்ஸ்</td><td>✅ குளிர்-பிழிவு எண்ணெய்கள்; ஏர்-ஃப்ரை</td></tr>
+                        <tr><td><b>4-MEI (caramel color)</b></td><td>கோலா/கருநிற பானங்கள்</td><td>தேவையற்ற ரசாயன சேர்மங்கள்</td><td>✅ எலுமிச்சை-இஞ்சி நீர்/பானகம்</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+             <div class="safety-note">
+                <h3>⚠️ பாதுகாப்பு குறிப்பு</h3>
+                <p>இவை அனைத்தும் பொதுக் கல்விக்கான வழிகாட்டுதல்கள். உங்களுக்கு மருத்துவ நிலைகள் (நீரிழிவு, IBS, PCOS, முதலியவை) இருந்தால், உங்கள் மருத்துவர் அல்லது டயட்டீஷ்யன் ஆலோசனையுடன் தனிப்பயன் திட்டத்தை அமைக்கவும். காரம்/கோகோ/நட்ஸ் போன்றவை தங்களுக்கு ஏற்ற அளவில் மட்டுமே.</p>
+            </div>
+        </footer>
+
+    </main>
+</div>
+
+</body>
+</html>
